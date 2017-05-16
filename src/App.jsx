@@ -14,6 +14,7 @@ import Home from './components/Home.jsx'
 import Player from './components/Player.jsx';
 import Detail from './components/Detail.jsx';
 import BackButton from './components/BackButton.jsx';
+import UpdateButton from './components/UpdateButton.jsx';
 
 import { createAction } from "redux-actions";
 
@@ -43,6 +44,7 @@ export default class App extends Component {
               <li><Link to="/detail"> Detail </Link></li>
               <li><Link to="/player"> Player </Link></li>
               <li> <BackButton /> </li>
+              <li> <UpdateButton /> </li>
             </ul>
 
             <hr />

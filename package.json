@@ -36,6 +36,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-3": "^6.24.1",
     "cpx": "^1.5.0",
     "cross-env": "^4.0.0",
     "css-loader": "^0.27.3",
@@ -55,18 +56,26 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "babel-polyfill": "^6.23.0",
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "^2.0.0",
     "color": "^1.0.3",
     "debug": "^2.6.3",
     "history": "^4.6.1",
+    "keymirror": "^0.1.1",
     "radium": "^0.18.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-paginate": "^4.4.2",
     "react-redux": "^5.0.4",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "react-router-redux": "next",
     "redux": "^3.6.0",
-    "redux-actions": "^2.0.2"
+    "redux-actions": "^2.0.2",
+    "redux-observable": "^0.14.1",
+    "rxjs": "^5.4.1"
   },
   "build": {
     "appId": "your.id",

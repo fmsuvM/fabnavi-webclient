@@ -1,6 +1,7 @@
 import React, {Component, PropTypes , cloneElement} from 'react';
 import {connect} from 'react-redux';
 
+import ProjectElement from '../components/ProjectElement';
 
 // pagination update version
 export default class Pagination extends Component {
@@ -46,9 +47,8 @@ export default class Pagination extends Component {
             controls.push(
                 <div key={i}
                     className={`${baseClassName} ${activeClassName}`}
-                    onClick={() => this.setCurrentPage(i)}
-                >
-                {i}
+                    onClick={() => this.setCurrentPage(i)}>
+                    {i}
                 </div>
             );
         }
@@ -65,7 +65,6 @@ export default class Pagination extends Component {
     }
 
     render(){
-        // this.makingProps(this.props.data)
         if(this.props.data.length === 0){
             return (
                 <div>
@@ -73,18 +72,26 @@ export default class Pagination extends Component {
                 </div>
             )
         } else {
-            return(
+          const data = this.createPaginateData();
+          const selector = this.props.selector;
+          return(
             <div>
-                <div className="procon">
+                <div className="paginator">
                     {this.createControls()}
                 </div>
-                <div className="proconcon">
-                    {cloneElement(this.props.children, {data: this.createPaginateData(), selector: this.props.selector})}
+                <div className="project-list">
+                    {data.map((project, index) => (
+                        <ProjectElement
+                            key={index}
+                            project={project}
+                            isSelected={selector.index == index}
+                            isOpenMenu={selector.index == index && selector.openMenu}
+                            menuIndex={selector.menuIndex}
+                            menuType={selector.menuType} />))}
                 </div>
             </div>
-        )
+          )
         }
-
     }
 }
 

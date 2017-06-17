@@ -1,5 +1,5 @@
 import Debug from 'debug';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 const debug = Debug('fabnavi:actions:keys');
 

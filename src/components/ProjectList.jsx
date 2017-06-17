@@ -6,7 +6,6 @@ import Debug from 'debug';
 
 import ProjectElement from '../components/ProjectElement';
 import Pagination from '../components/Pagination.jsx';
-import ShowingResults from '../components/ShowingResults.jsx';
 
 const debug = Debug('fabnavi:jsx:ProjectList');
 
@@ -19,11 +18,8 @@ class ProjectList extends Component {
   render() {
     const selector = this.props.selector;
     return (
-
-        <div className="projects">
-            <Pagination data={this.props.projects} selector={selector}>
-              <ShowingResults />
-            </Pagination>
+      <div className="project-list-container">
+        <Pagination data={this.props.projects} selector={selector} />
       </div>
     );
   }

@@ -1,9 +1,7 @@
 @import "../var.scss";
-@import "bourbon";
-@import "neat";
 
 .editproject{
-  @include grid-container;
+  // @include grid-container;
   margin-right: auto;
   margin-left: auto;
   width:$solid-width;
@@ -69,12 +67,6 @@ p.edit{
     img:active{
       -webkit-filter: grayscale(100%);
     }
-}
-
-input {
-  padding : 0;
-  margin : 0;
-
 }
 
 .form-box-edit {

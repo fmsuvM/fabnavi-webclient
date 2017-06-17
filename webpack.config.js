@@ -25,10 +25,6 @@ module.exports = [{
       }, {
         loader: "sass-loader",
         options: {
-          includePaths: [].concat(
-            require('bourbon').includePaths, 
-            require('bourbon-neat').includePaths
-          )
         }
       }]
     }]

@@ -14,8 +14,7 @@ export default class SearchBar extends React.Component {
         <div className="menu-action search-bar">
           <form>
             <input id="search-box"/>
-            <span className="search-icon">
-            </span>
+            <img className="search-icon" src="./images/search_icon.png"/>
           </form>
         </div>
       </section>

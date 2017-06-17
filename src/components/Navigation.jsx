@@ -18,21 +18,21 @@ class Navigation extends React.Component {
   render() {
     const menu = this.props.user.isLoggedIn ? (
         <div className="menu" >
-          <li><MenuIcon to="/" src="/images/kaffcop_icon/home.png" width="200px" height="60px"/></li>
-          <li><MenuIcon to="myprojects" src="/images/kaffcop_icon/myproject.png"/></li>
-          <li><MenuIcon act="sign_out" src="/images/kaffcop_icon/signout.png" /></li>
+          <li><MenuIcon to="/" src="./images/kaffcop_icon/home.png" width="200px" height="60px"/></li>
+          <li><MenuIcon to="myprojects" src="./images/kaffcop_icon/myproject.png"/></li>
+          <li><MenuIcon act="sign_out" src="./images/kaffcop_icon/signout.png" /></li>
         </div>
     ) : (
         <div className="menu" >
-          <li><MenuIcon to="/" src="/images/kaffcop_icon/home.png" /></li>
-          <li><MenuIcon act="sign_in" src="/images/kaffcop_icon/signin.png" /></li>
+          <li><MenuIcon to="/" src="./images/kaffcop_icon/home.png" /></li>
+          <li><MenuIcon act="sign_in" src="./images/kaffcop_icon/signin.png" /></li>
         </div>
     );
     return (
       <div className="header">
         <ul className="glonav">
           <Link className="logo" to="/" >
-            <img src="/images/kaffcop_icon/logo.png" />
+            <img src="./images/kaffcop_icon/logo.png" />
           </Link>
         <li>
           {menu}

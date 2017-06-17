@@ -15,13 +15,13 @@ export default class ProjectElement extends Component {
           className={`action-box ${this.props.menuIndex == 0 ? 'selected-action' : 'action'}`}
           style="border-radius: 5px 5px 0px 0px;" >
           <div className="menu2">
-            <img src="/images/p_play.png" />
+            <img src="./images/p_play.png" />
             Play
           </div>
         </li>
         <li className={`action-box ${this.props.menuIndex == 1 ? 'selected-action' : 'action'}`}>
           <div className="menu2">
-            <img src="/images/p_detail.png" />
+            <img src="./images/p_detail.png" />
             Detail
           </div>
         </li>
@@ -30,25 +30,25 @@ export default class ProjectElement extends Component {
       <ul className="actions">
         <li className={`action-box ${this.props.menuIndex == 0 ? 'selected-action' : 'action'}`}>
           <div className="menu5">
-            <img src="/images/p_play.png" />
+            <img src="./images/p_play.png" />
             Play
           </div>
         </li>
         <li className={`action-box ${this.props.menuIndex == 1 ? 'selected-action' : 'action'}`}>
           <div className=".menu5">
-            <img src="/images/p_detail.png" />
+            <img src="./images/p_detail.png" />
             Detail
           </div>
         </li>
         <li className={`action-box ${this.props.menuIndex == 2 ? 'selected-action' : 'action'}`}>
           <div className="menu5">
-            <img src="/images/p_edit.png" />
+            <img src="./images/p_edit.png" />
             Edit
           </div>
         </li>
         <li className={`action-box ${this.props.menuIndex == 3 ? 'selected-action' : 'action'}`}>
           <div className="menu4">
-            <img src="/images/p_delete.png" />
+            <img src="./images/p_delete.png" />
             Delete
           </div>
         </li>

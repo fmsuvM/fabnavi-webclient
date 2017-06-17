@@ -13,7 +13,6 @@ class Navigation extends React.Component {
   }
 
   render() {
-    console.log("render nav", MenuIcon);
     const menu = this.props.user.isLoggedIn ? (
       <div className="menu" >
         <MenuIcon to="/" src="/images/kaffcop_icon/fab_home.png" />

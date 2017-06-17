@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-console.log(require('bourbon'));
 module.exports = [{
   entry: path.join(__dirname, 'src/components/FabnaviApp.jsx'),
   output: {

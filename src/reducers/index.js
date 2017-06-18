@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import Debug from 'debug';
 
+import { routerReducer } from 'react-router-redux'
 import player from './player';
 import user from './user';
 import manager from './manager';
@@ -16,5 +17,6 @@ export default combineReducers({
   user,
   manager,
   frame,
-  errors
+  errors,
+  routing: routerReducer
 });

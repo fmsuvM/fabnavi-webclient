@@ -1,5 +1,6 @@
 import Debug from 'debug';
 import { hashHistory } from 'react-router';
+import { push } from 'react-router-redux'
 
 const debug = Debug('fabnavi:actions:keys');
 
@@ -165,7 +166,7 @@ function exitPlayer(store, action) {
   console.log('--- exitPlayer function is actioned ---');
   action.type = 'PLAYER_EXIT';
   store.dispatch(action);
-  browserHistory.push('/');
+  store.disaptch(push('/'));
 }
 
 function changePlayerMode(store, action) {
@@ -204,7 +205,7 @@ function fireMenuAction(store, action, state) {
       api.getOwnProjects();
     });
   } else {
-    browserHistory.push(`/${state.manager.selector.action}/${state.manager.project.id}`);
+    store.dispatch(push(`/${state.manager.selector.action}/${state.manager.project.id}`));
   }
 }
 

@@ -1,5 +1,5 @@
 // defaultで表示するcomponent
-import React, {Component, PropTypes, cloneElement} from 'react';
+import React, { Component, PropTypes, cloneElement } from 'react';
 import { connect } from 'react-redux';
 import ReactPaginate from 'react-paginate'
 import Debug from 'debug';
@@ -29,9 +29,9 @@ class ProjectList extends Component {
       return;
     }
     if(this.props.match.path !== nextProps.match.path) {
-      if(nextProps.match.path === 'myprojects') {// myProjectの場合，自分が作成したprojectのみを引っ張ってくる
+      if(nextProps.match.path === 'myprojects') { // myProjectの場合，自分が作成したprojectのみを引っ張ってくる
         api.getOwnProjects();
-      } else {// そうじゃない場合，全部引っ張ってくる
+      } else { // そうじゃない場合，全部引っ張ってくる
         api.getAllProjects();
       }
     }

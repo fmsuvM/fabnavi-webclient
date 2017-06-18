@@ -29,6 +29,7 @@ class Player extends React.Component {
   render() {
     return (
       <div>
+      <h1>player</h1>
         <canvas ref="mainCanvas" />
       </div>
     );

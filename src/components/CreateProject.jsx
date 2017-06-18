@@ -5,32 +5,32 @@ const debug = Debug('fabnavi:jsx:CreateProject');
 
 export default class CreateProject extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.props = {};
-        this.state = {
-            name: '',
-            description: ''
-        };
-        this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.props = {};
+    this.state = {
+      name: '',
+      description: ''
+    };
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    handleNameChange(e) {
-        this.setState({name: e.target.value});
-    }
+  handleNameChange(e) {
+    this.setState({ name: e.target.value });
+  }
 
-    handleDescriptionChange(e) {
-        this.setState({description: e.target.value});
-    }
+  handleDescriptionChange(e) {
+    this.setState({ description: e.target.value });
+  }
 
-    handleSubmit() {
-        api.createProject(this.state.name, 'Content::PhotoList', this.state.description);
-    }
+  handleSubmit() {
+    api.createProject(this.state.name, 'Content::PhotoList', this.state.description);
+  }
 
-    render() {
-        return (
+  render() {
+    return (
             <div>
                 <h1>
                     className="form-title"> CreateProject
@@ -59,6 +59,6 @@ export default class CreateProject extends React.Component {
                     </div>
                 </form>
             </div>
-        )
-    }
+    )
+  }
 }

@@ -1,6 +1,6 @@
 import Debug from 'debug';
 
-import Act from "../actions/Types";
+import Act from '../actions/Types';
 
 const debug = Debug('fabnavi:reducer:manager');
 
@@ -27,7 +27,7 @@ const initialState = {
 // stateの更新は `Object.assign` を使う
 // stateそのものを変更させないため
 export default function managerReducer(state = initialState, action) {
-
+  debug(state, action); 
   switch(action.type) {
     case Act.FETCHING_PROJECTS:
       return Object.assign({}, state, {

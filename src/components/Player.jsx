@@ -132,7 +132,7 @@ class Player extends React.Component {
   componentWillMount() {
     if(!this.props.project) {
       debug('project not loaded!');
-      api.getProject(location.pathname.split('/')[2]);
+      api.getProject(memoryHistory.location.pathname.split('/')[2]);
     }
   }
 

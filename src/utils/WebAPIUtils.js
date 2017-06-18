@@ -6,7 +6,7 @@ import Act from "../actions/Types";
 import { signedIn } from "../actions/users";// createAction(Act.signedIN)
 
 const debug = Debug('fabnavi:api');
-const host = 'http://fabnavi.org';
+const host = 'http://preview.fabnavi.org';
 
 class Server {
     // コンストラクタ

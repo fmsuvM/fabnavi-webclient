@@ -6,6 +6,7 @@ import { push } from 'react-router-redux'
 import { signInFailed, signedIn, signedOut, signingOut } from '../actions/users';
 
 const debug = Debug('fabnavi:jsx:MenuIcon');
+const { remote } = require('electron');
 
 class MenuIcon extends React.Component {
 
@@ -25,22 +26,31 @@ class MenuIcon extends React.Component {
     };
 
     this.signIn = () => {
-      const host = 'http://fabnavi.org';
+      const host = 'http://preview.fabnavi.org';
       const url = `${host}/auth/github?auth_origin_url=${host}`;
-      window.open(url);
+      const authWindow = new remote.BrowserWindow({
+        modal: true,
+        width: 400,
+        height: 800,
+        webPreferences: {
+          webSecurity: false,
+        }
+      });
+      authWindow.loadURL(url);
       const onMessage = (e) => {
-        window.removeEventListener('message', onMessage, false);
-
-        if(e.origin === window.location.origin) {
-          try{
-            debug('>> ', e.data);
-            this.props.signedIn(JSON.parse(e.data));
-          } catch(error) {
-            this.props.signInFailed(error, e);
-          }
+        debug(authWindow.getURL());
+        const url = authWindow.getURL();
+        if (url.includes('uid') && url.includes('client_id') && url.includes('auth_token')) {
+          this.props.signedIn({
+            'Access-Token': url.match(/auth_token=([a-zA-Z0-9\-\_]*)/)[1],
+            'Uid': url.match(/uid=([a-zA-Z0-9\-\_]*)/)[1],
+            'Client': url.match(/client_id=([a-zA-Z0-9\-\_]*)/)[1]
+          });
+          authWindow.close();
         }
       };
-      window.addEventListener('message', onMessage);
+      authWindow.once('message', onMessage);
+      authWindow.on('page-title-updated', onMessage);
     };
 
     this.signOut = () => {

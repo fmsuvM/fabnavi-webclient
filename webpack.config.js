@@ -32,5 +32,13 @@ module.exports = [{
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  externals: [
+      function(context, request, callback) {
+         if (request === 'electron') { 
+          return callback(null, "require('" + request + "')");
+        }
+        return callback()
+      }
+  ]
 }]
